@@ -12,13 +12,14 @@ namespace k8s
     /// </summary>
     public static class KubernetesYaml
     {
-#if NET9_0_OR_GREATE
+#if NET9_0_OR_GREATER
         private readonly Lock DeserializerLockObject = new();
         private readonly Lock SerializerLockObject = new();
 #else
         private static readonly object DeserializerLockObject = new object();
         private static readonly object SerializerLockObject = new object();
 #endif
+
 
         private static DeserializerBuilder CommonDeserializerBuilder =>
             new DeserializerBuilder()

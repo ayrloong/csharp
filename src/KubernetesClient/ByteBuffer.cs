@@ -21,7 +21,7 @@ namespace k8s
 
         private readonly int maximumSize;
         private readonly AutoResetEvent dataAvailable = new AutoResetEvent(false);
-#if NET9_0_OR_GREATE
+#if NET9_0_OR_GREATER
         private readonly Lock lockObject = new();
 #else
         private readonly object lockObject = new object();
